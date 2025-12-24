@@ -1,4 +1,4 @@
-ARG version=23.04
+ARG version
 FROM ubuntu:${version}
 RUN mkdir roboshop
 WORKDIR /roboshop
