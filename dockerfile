@@ -15,4 +15,4 @@ RUN curl -fsSL https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip -o awscl
     && unzip awscliv2.zip \
     && ./aws/install \
     && rm -rf aws awscliv2.zip
-CMD ["/bin/bash"]
+CMD ["/bin/bash" "aws"]
