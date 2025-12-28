@@ -1,0 +1,41 @@
+global:
+  scrape_interval: 15s
+
+alerting:
+  alertmanagers:
+  - static_configs:
+    - targets:
+      - "localhost:9093"
+      - "18.207.106.49:9093"
+
+rule_files:
+  - "alert_rules.yml"
+  - "alertmanager_instancedown_rule.yml"
+
+scrape_configs:
+  - job_name: 'prometheus'
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+        - "localhost:9090"
+  - job_name: 'node_exporter'
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+        - "localhost:9100"
+  - job_name: 'node_exporter'
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+        - "ec2-35-170-198-107.compute-1.amazonaws.com:9100"
+  - job_name: 'node_exporter'
+    scrape_interval: 5s
+    static_configs:
+      - targets:
+        - "ec2-3-226-238-19.compute-1.amazonaws.com:9100"
+  # - job_name: qa_node_exporter
+  #   scrape_interval: 5s
+  #   ec2_sd_configs:
+  #     - region: us-east-1
+        
+        
